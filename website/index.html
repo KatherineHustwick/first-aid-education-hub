@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/themes/light.css">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.1/cdn/shoelace-autoloader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+  <link rel="stylesheet" href="styles.css">
+  <title>First Aid Education Hub</title>
+
+  <body>
+    <header class="site-header">
+      <div class="brand">
+        <img class="logo" src="photos-first-aid/first-aid-box.png" alt="blue first aid box logo">
+        <h2>First Aid Hub</h2>
+      </div>
+  
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a href="#general-info">General Information</a> |
+        <a href="#topics">Topics</a> |
+        <a href="#dos-donts">Do’s & Don’ts</a> |
+        <a href="#DRSABCD">DRS ABCD</a> |
+        <a href="#first-aid-kit">Inside a First Aid Kit</a> |
+        <a href="#contact">Contact</a>
+      </nav>
+  
+      <!-- Mobile Menu Button (hidden on desktop) -->
+  <sl-icon-button name="list" id="menu-toggle" label="Open menu"></sl-icon-button>
+</header>
+
+<!-- Shoelace Drawer (hidden on desktop) -->
+<sl-drawer label="Menu" placement="end" id="mobile-menu">
+  <nav>
+    <a href="#general-info">General Information</a>
+    <a href="#topics">Topics</a>
+    <a href="#dos-donts">Do’s & Don’ts</a>
+    <a href="#DRSABCD">DRS ABCD</a>
+    <a href="#first-aid-kit">Inside a First Aid Kit</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</sl-drawer>
+  
+    <!-- Hero/Intro Section of my Website-->
+    <main>
+      <section class="start">
+        <div class="copy">
+          <h1>First Aid Education Hub</h1>
+          <p>Learn the basics of first aid and build confidence in your skills and knowledge.</p>
+          <button id="start-btn">Start Learning</button> <!--This button is linked with my JS-->
+        </div>
+    
+        <div class="pic">
+          <img class="doc" src="photos-first-aid/doc-home.png" alt="female doctor">
+        </div>
+      </section>
+    </main>
+    
+    <!--  General Information Section (health habits cards) -->
+<h4> General Information</h4>
+    <section id="general-info"> 
+        <!-- Quick icons row (nutrition, hydration, sleep, mental health) -->
+        <div class="icons" >
+            <img class="fruit" src="photos-first-aid/fruits.png" alt="Nutrition icon" width="10">
+            <img  class="water" src="photos-first-aid/water-drop.png" alt="Hydration icon" width="100">
+            <img  class="sleep" src="photos-first-aid/sleeping.png" alt="Sleep icon" width="100">
+            <img class="mental-health" src="photos-first-aid/mental-health.png" alt="Mental health icon" width="100">
+        </div>
+
+        <!-- 4-card grid with tips -->
+        <div class="info-1">
+            <div class="card">
+              <h3>Nutrition</h3>
+              <p>Aim for 2 servings of fruit and 5 of veg a day. A variety keeps your gut and energy levels happy.</p>
+            </div>
+          
+            <div class="card">
+              <h3>Hydration</h3>
+              <p>Keep a water bottle with you. Even mild dehydration can cause fatigue and headaches.</p>
+            </div>
+          
+            <div class="card">
+              <h3>Sleep</h3>
+              <p>Stick to a regular routine; 7–9 hours helps memory, mood, and focus.</p>
+            </div>
+          
+            <div class="card">
+              <h3>Mental health</h3>
+              <p>Take 10 minutes daily for something calming (deep breathing, journaling, stretching).</p>
+            </div>
+          </div>
+      </section>
+
+      <!--Topics (flip-cards with front/back info per topic) -->
+      <h4>Topics</h4>
+      <section id="topics">
+
+        <!-- Burns -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/burn.png " alt="Burns icon" width="80">
+              <h3 class="flip-title">Burns</h3>
+              <p class="flip-text1">Burns damage the skin and need quick, proper care.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Cool the burn under running water for 20 minutes. Remove tight items, cover with a sterile, non-stick dressing, and seek help for severe or large burns.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Bleeding -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/blood-droplet.png" alt="Bleeding icon" width="80">
+              <h3 class="flip-title">Bleeding</h3>
+              <p class="flip-text1">Blood loss that needs firm pressure to control.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Apply direct pressure with a clean cloth, elevate if possible, and keep pressure until bleeding stops. Call emergency help for severe bleeding.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Choking -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/choking.png" alt="Choking icon" width="80">
+              <h3 class="flip-title">Choking</h3>
+              <p class="flip-text1">Airway blocked—needs rapid action.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Encourage coughing. If ineffective, give back blows and chest/abdominal thrusts per guidelines. Call emergency services if obstruction persists.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- CPR -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/cpr.png" alt="CPR icon" width="80">
+              <h3 class="flip-title">CPR</h3>
+              <p class="flip-text1">Keeps blood and oxygen flowing.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Call emergency services. Push hard and fast in the centre of the chest (about 100–120/min) and use an AED as soon as available.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Cuts -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/first-aid.png" alt="Cuts icon" width="80">
+              <h3 class="flip-title">Cuts</h3>
+              <p class="flip-text1">Skin breaks needing clean & cover.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Rinse with clean water, pat dry, apply antiseptic if available, and cover with a sterile dressing. Watch for signs of infection.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Fracture -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/fracture.png" alt="Fracture icon" width="80">
+              <h3 class="flip-title">Fracture</h3>
+              <p class="flip-text1">Broken bone—support & seek care.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Immobilise the area as found, apply a splint if trained, and seek medical care. Do not push bones back in.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Poison -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/venom.png" alt="Poison icon" width="80">
+              <h3 class="flip-title">Poison</h3>
+              <p class="flip-text1">Harmful substances—urgent help.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Do not induce vomiting. Check the label if available and call Poison Information (Australia: 13 11 26) or emergency services.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Shock -->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/shock.png" alt="Shock icon" width="80">
+              <h3 class="flip-title">Shock</h3>
+              <p class="flip-text1">Body not getting enough blood flow.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">Lay the person down, keep warm, elevate legs if no injury, and get urgent medical help.</p>
+            </div>
+          </div>
+        </div>
+      
+        <!-- Stings-->
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-face flip-front">
+              <img class="flip-icon" src="photos-first-aid/apitherapy.png" alt="Stings icon" width="80">
+              <h3 class="flip-title">Stings</h3>
+              <p class="flip-text1">Venom can cause pain & swelling.</p>
+            </div>
+            <div class="flip-face flip-back">
+              <p class="flip-text">A bee sting injects venom, causing redness, swelling, and pain. Remove the stinger quickly, clean the area, and apply a cold pack.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+
+    <!-- Do’s and Dont's Section  with the SVG Animations-->     
+      <section id="dos-donts" aria-labelledby="dd-title">
+        <h2 id="dd-title" class="title">First Aid Do’s and Don’ts</h2>
+      
+        <!-- Do’s -->
+        <div class="dos-column">
+          <h3>Do’s</h3>
+          <ul class="dd-list">
+            <li class="dd-item">
+              <object id="ani-do" type="image/svg+xml" data="photos-first-aid/tick.svg"> </object> <!--SVG-->
+                <p>Move someone with a suspected head, neck, or back injury.</p>
+              
+
+            </li>
+      
+            <li class="dd-item">
+              <object id="ani-do1" type="image/svg+xml" data="photos-first-aid/tick.svg"> </object> <!--SVG-->
+              <p>Call <strong>000</strong> (or your local emergency number) if needed.</p>
+            </li>
+      
+            <li class="dd-item">
+              <object id="ani-do2" type="image/svg+xml" data="photos-first-aid/tick.svg"></object> <!--SVG-->
+              <p>Stay calm and assess the situation before acting.</p>
+            </li>
+          </ul>
+        </div>
+      
+        <!-- Don’ts -->
+        <div class="donts-column">
+          <h3>Don’ts</h3>
+          <ul class="dd-list">
+            <li class="dd-item">
+              <object id="ani-dont" type="image/svg+xml" data="photos-first-aid/cross.svg"></object> <!--SVG-->
+              <p>Move someone with a suspected head, neck, or back injury.</p>
+            </li>
+      
+            <li class="dd-item">
+              <object id="ani-dont1" type="image/svg+xml" data="photos-first-aid/cross.svg"></object> <!--SVG-->
+              <p>Give food or drink to an unconscious or seriously injured person.</p>
+            </li>
+      
+            <li class="dd-item">
+              <object id="ani-dont2" type="image/svg+xml" data="photos-first-aid/cross.svg"></object> <!--SVG-->
+              <p>Panic or rush in without checking for danger.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      
+ <!-- DRS ABCD Shoelace Component -->
+ <section id = "DRSABCD">
+  <h4>Dr's ABCD</h4>
+  <!-- Tab group containing steps of DRSABCD -->
+  <sl-tab-group>
+    <!-- Tab navigation labels -->
+      <sl-tab slot="nav" panel="Danger">Danger</sl-tab>
+      <sl-tab slot="nav" panel="Response">Response</sl-tab>
+      <sl-tab slot="nav" panel="Send">Send</sl-tab>
+      <sl-tab slot="nav" panel="Airway">Airway</sl-tab>
+      <sl-tab slot="nav" panel="Breathing">Breathing</sl-tab>
+      <sl-tab slot="nav" panel="CPR">CPR</sl-tab>
+      <sl-tab slot="nav" panel="Defibrillation">Defibrillation</sl-tab>
+    
+      <!-- D = Danger -->
+      <sl-tab-panel name="Danger">
+        <section class="drs-panel">
+          <div class="pill">D = Danger</div>
+          
+          <p class="intro">
+            In first aid, <strong>DRSABCD</strong> starts with <strong>D for Danger</strong>.
+            Before providing help, always check for any risks to yourself, the injured person, 
+            and bystanders. Ensuring the area is safe prevents further harm and lets you give 
+            first aid without putting yourself in danger.
+            
+          </p>
+    
+          <div class="four-col">
+            <div class="note-card1">
+              <h5>Check for Danger</h5>
+              <ul>
+                <li>Look around the scene before approaching.</li>
+                <li>Identify hazards — fire, traffic, sharp objects, electricity.</li>
+                <li>Check for danger to <strong>you</strong>, the <strong>casualty</strong>, then <strong>others</strong>.</li>
+                <li>Never rush in — your safety comes first.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>Common Hazards</h5>
+              <ul>
+                <li>Traffic – cars, bikes, moving vehicles</li>
+                <li>Fire/Smoke – flames, heat, fumes</li>
+                <li>Electricity – wires, power lines, equipment</li>
+                <li>Chemicals or gas leaks</li>
+                <li>Broken glass, unstable structures</li>
+                <li>Aggressive people or crowds</li>
+              </ul>
+            </div>
+    
+            <div class="note-card3">
+              <h5>Make the Area Safe</h5>
+              <ul>
+                <li>Turn off power sources / move away from danger.</li>
+                <li>Keep bystanders at a safe distance.</li>
+                <li>Use barriers like gloves or masks when possible.</li>
+                <li>Secure hazards before approaching the injured person.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Tips and Techniques</h5>
+              <ul>
+                <li>Stop and scan first — don’t act until it’s safe.</li>
+                <li>Never risk your own life to save someone else.</li>
+                <li>Call for help early if danger can’t be controlled.</li>
+                <li>Stay alert for new risks while giving first aid.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sound effect -->
+          <button class="sound-btn" data-audio="sound1">🔊 Listen</button>
+          <audio id="sound1" src="audio1/school-fire-alarm-loud-beepflac-14807.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    
+
+     
+
+
+      <!-- R = Response -->
+      <sl-tab-panel name="Response">
+        <section class="drs-panel">
+          <div class="pill">R = Response</div>
+    
+          <p class="intro">
+            In first aid, the second step of DRSABCD is <strong>R for Response</strong>.
+            Once the area is safe, check if the injured person is conscious and able to respond.
+            This helps you understand their condition and decide what to do next.
+          </p>
+    
+          <div class="four-col">
+            <div class="note-card1">
+              <h5>How to Check for Response</h5>
+              <ul>
+                <li>Talk — “Can you hear me?” “Open your eyes.”</li>
+                <li>Touch — Gently tap shoulders or squeeze hands.</li>
+                <li>Observe — Movement, blinking, facial changes.</li>
+                <li>Listen — Moaning or breathing sounds.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>If They Respond</h5>
+              <ul>
+                <li>Leave in a comfortable position.</li>
+                <li>Check for injuries or bleeding.</li>
+                <li>Monitor until help arrives.</li>
+                <li>Reassure and keep warm.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card3">
+              <h5>If They Don’t Respond</h5>
+              <ul>
+                <li>Shout for help / call emergency services.</li>
+                <li>Proceed to <strong>S = Send for Help</strong>.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Tips and Techniques</h5>
+              <ul>
+                <li>Introduce yourself before touching.</li>
+                <li>Stay calm and speak clearly.</li>
+                <li>Get help early if unresponsive.</li>
+                <li>No response = emergency.</li>
+              </ul>
+            </div>
+          </div>
+               <!-- Sound effect -->
+          <button class="sound-btn" data-audio="sound2" >🔊 Listen</button>
+          <audio id="sound2" src="audio1/snapping-fingers-97608.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    
+      <!-- S = Send -->
+      <sl-tab-panel name="Send">
+        <section class="drs-panel">
+          <div class="pill">S = Send for Help</div>
+    
+          <p class="intro">
+            After checking for danger and a response, the next step in <strong>DRSABCD</strong> is 
+            <strong>S for Send for Help</strong>. Early medical assistance saves lives.
+          </p>
+    
+          <div class="two-col">
+            <div class="note-card1">
+              <h5>When to Call for Help</h5>
+              <ul>
+                <li>Unresponsive, not breathing, or seriously injured.</li>
+                <li>Any life-threatening emergency (severe bleeding, burns, poisoning).</li>
+                <li>When more than basic first aid is needed.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>How to Send for Help</h5>
+              <ul>
+                <li>Call <strong>000</strong> — ask for <strong>Ambulance</strong>.</li>
+                <li>Give location, what happened, number of people hurt.</li>
+                <li>Use speakerphone; send a bystander if present.</li>
+                <li>Remote area: satellite phone / PLB if available.</li>
+                <li>Don’t hang up until told to.</li>
+              </ul>
+            </div>
+            <div class="note-card3">
+              <h5>Give Clear Information</h5>
+              <ul>
+                <li>Provide your exact location — street name, landmarks, or building number.</li>
+                <li>Describe what happened (e.g. injury, burn, allergic reaction, collapse).</li>
+                <li>State how many people are injured or need help.</li>
+                <li>Explain the person’s condition — are they conscious, breathing, or bleeding?</li>
+                <li>Stay calm and speak clearly so the operator can assist quickly.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Tips and Techniques</h5>
+              <ul>
+                <li>Keep your phone on loudspeaker so both hands stay free.</li>
+                <li>Ask someone nearby to call for help if you’re busy assisting the injured person.</li>
+                <li>Stay calm and speak slowly — the operator will guide you step by step.</li>
+                <li>Don’t hang up until told to — emergency operators can provide CPR instructions.</li>
+                <li>Send someone to meet and guide the ambulance to your location.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sound effect -->
+          <button class="sound-btn" data-audio="sound3" >🔊 Listen</button>
+        <audio id="sound3" src="audio1/police-siren-sound-effect-317645.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    
+
+
+
+
+
+
+
+      <!-- A = Airway -->
+      <sl-tab-panel name="Airway">
+        <section class="drs-panel">
+          <div class="pill">A = Airway</div>
+    
+          <p class="intro">
+            Ensure the person’s airway is clear and open. A blocked airway prevents oxygen reaching the lungs.
+          </p>
+    
+          <div class="four-col">
+            <div class="note-card1">
+              <h5>Check the Airway</h5>
+              <ul>
+                <li>Lay on back on a firm surface.</li>
+                <li>Open mouth; look for vomit, food, blood.</li>
+                <li>Roll to side to drain fluids if needed.</li>
+                <li>Remove visible obstructions with fingers/cloth.</li>
+                <li>No blind finger sweeps.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>Clear the Airway</h5>
+              <ul>
+                <li>Only remove what you can <strong>see</strong>.</li>
+                <li>Check under the tongue (dentures, vomit).</li>
+                <li>Return to back and recheck for breathing.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card3">
+              <h5>Keep it Open</h5>
+              <ul>
+                <li><strong>Head Tilt–Chin Lift</strong>.</li>
+                <li>Suspected spine injury: <strong>Jaw Thrust</strong>.</li>
+                <li>Maintain while checking breathing.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Tips & Next Steps</h5>
+              <ul>
+                <li>Check for normal breathing ≤10 seconds.</li>
+                <li>Breathing: place in Recovery Position.</li>
+                <li>Not breathing: start CPR.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sound effect -->
+          <button class="sound-btn" data-audio="sound4" >🔊 Listen</button>
+          <audio id="sound4" src="audio1/deep-sigh-and-exhale-102832.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    
+      <!-- B = Breathing -->
+      <sl-tab-panel name="Breathing">
+        <section class="drs-panel">
+          <div class="pill">B = Breathing</div>
+    
+          <p class="intro">
+            Decide if the person is breathing normally and whether CPR is needed.
+          </p>
+    
+          <div class="four-col">
+            <div class="note-card1">
+              <h5>Check for Breathing</h5>
+              <ul>
+                <li>Keep airway open (Head Tilt–Chin Lift).</li>
+                <li>Look, listen, feel for ≤10 seconds.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>Normal Signs</h5>
+              <ul>
+                <li>Regular chest rise and fall.</li>
+                <li>Normal breath sounds; air felt at mouth/nose.</li>
+                <li>Normal skin colour.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card3">
+              <h5>If Not Normal</h5>
+              <ul>
+                <li>Confirm <strong>000</strong> is called.</li>
+                <li>Start <strong>CPR</strong> (30:2).</li>
+                <li>Use a barrier if available.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Tips</h5>
+              <ul>
+                <li>Agonal gasps ≠ normal breathing.</li>
+                <li>Recheck after ~2 mins of CPR if unsure.</li>
+                <li>If breathing resumes: recovery position + monitor.</li>
+              </ul>
+            </div>
+          </div>
+          <button class="sound-btn" data-audio="sound5" >🔊 Listen</button>
+          <audio id="sound5" src="audio1/breathing-6811.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    
+      <!-- C = CPR -->
+      <sl-tab-panel name="CPR">
+        <section class="drs-panel">
+          <div class="pill">C = CPR</div>
+    
+          <p class="intro">
+            CPR keeps blood and oxygen flowing until help arrives.
+          </p>
+    
+          <div class="four-col">
+            <div class="note-card1">
+              <h5>Starting CPR</h5>
+              <ul>
+                <li>Firm, flat surface; kneel beside chest.</li>
+                <li>Hands centre chest (lower half sternum).</li>
+                <li>Arms straight; shoulders over hands.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>Compressions</h5>
+              <ul>
+                <li>Depth ≈ one-third chest (~5 cm adults).</li>
+                <li>Rate 100–120/min (“Stayin’ Alive”).</li>
+                <li>Full recoil each push; 30 compressions.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card3">
+              <h5>Rescue Breaths</h5>
+              <ul>
+                <li>Open airway; pinch nose; seal mouth.</li>
+                <li>Give 2 breaths — just to see chest rise.</li>
+                <li>Hands-only CPR if you can’t give breaths.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Tips & Safety</h5>
+              <ul>
+                <li>Alternate 30:2; swap rescuer every ~2 mins.</li>
+                <li>Don’t stop until breathing returns, help arrives, or you’re exhausted.</li>
+                <li>Use an <strong>AED</strong> ASAP; follow operator prompts.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sound effect -->
+          <button class="sound-btn" data-audio="sound6" >🔊 Listen</button>
+          <audio id="sound6" src="audio1/heartbeat-with-deep-breaths-55210.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    
+      <!-- D = Defibrillation -->
+      <sl-tab-panel name="Defibrillation">
+        <section class="drs-panel">
+          <div class="pill">D = Defibrillation</div>
+    
+          <p class="intro">
+            Use an <strong>AED</strong> to restore a normal heart rhythm during cardiac arrest.
+            Early defibrillation greatly improves survival.
+          </p>
+    
+          <div class="four-col">
+            <div class="note-card1">
+              <h5>What is an AED?</h5>
+              <ul>
+                <li>Portable device that analyses rhythm, delivers shocks if needed.</li>
+                <li>Found in schools, malls, gyms, airports, offices.</li>
+                <li>Gives clear voice/visual instructions.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card2">
+              <h5>How to Use</h5>
+              <ul>
+                <li>Turn on; follow prompts.</li>
+                <li>Expose/dry chest; remove metal/jewellery in pad area.</li>
+                <li>Place pads: upper right chest & lower left side.</li>
+                <li>Stand clear during analysis/shock.</li>
+                <li>Resume CPR immediately after shock or “no shock.”</li>
+              </ul>
+            </div>
+    
+            <div class="note-card3">
+              <h5>While Using</h5>
+              <ul>
+                <li>Continue CPR between analyses.</li>
+                <li>Keep pads on for monitoring.</li>
+                <li>Avoid water/metal surfaces if possible.</li>
+                <li>Assign tasks if multiple rescuers.</li>
+              </ul>
+            </div>
+    
+            <div class="note-card4">
+              <h5>Key Reminders</h5>
+              <ul>
+                <li>Time is critical — use AED ASAP.</li>
+                <li>Trust the prompts; stay calm.</li>
+                <li>Tell paramedics usage time and number of shocks.</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Sound effect -->
+          <button class="sound-btn" data-audio="sound7" >🔊 Listen</button>
+          <audio id="sound7" src="audio1/defibrillator-6961.mp3"></audio>
+        </section>
+      </sl-tab-panel>
+    </sl-tab-group>
+  </section>
+
+   
+<!-- Image Gallery Shoelace Component-->
+ <h4 id="kit"> Inside a First Aid Kit </h4>
+
+  <div class="mouse-dragging">
+    <sl-carousel pagination id="first-aid-kit" loop navigation>
+
+      <sl-carousel-item>
+        <div class="slide">
+          <h6>Gloves</h6>
+          <img src="photos-first-aid/glove.png" alt="First aid: Gloves">
+          <p>Gloves are an essential item in any first aid kit because they protect 
+            both the first aider and the injured person from infection or contamination. 
+            Wearing disposable gloves helps prevent contact with blood, body fluids, or other 
+            potentially harmful substances, reducing the risk of spreading germs or disease. 
+            They also help keep wounds clean while providing a safe barrier when giving care.</p>
+        </div>
+      </sl-carousel-item>
+
+  
+      <sl-carousel-item>
+        <div class="slide">
+          <h6>Scissors</h6>
+          <img src="photos-first-aid/tweezers.png" alt="First aid: Medical Scissors">
+          <p>Medical scissors are an important part of a first aid kit because they
+             allow you to quickly and safely cut clothing, bandages, or tape during an 
+             emergency. Their blunt-ended design helps prevent accidental injury while 
+             cutting near the skin. Having medical scissors ensures you can access a 
+             wound easily, apply dressings properly, and remove materials without causing further harm.</p>
+        </div>
+      </sl-carousel-item>
+     
+
+        <sl-carousel-item>
+          <div class="slide">
+            <h6>BandAids</h6>
+            <img src="photos-first-aid/band-aid.png" alt="First aid: bandaid">
+            <p>Band-aids (adhesive dressings) are a key item in any first aid kit 
+              because they protect small cuts, blisters, or abrasions from dirt,
+               bacteria, and further injury. They help the wound stay clean and 
+               promote faster healing by keeping it covered and moist. Band-aids
+                also provide a small cushion to reduce pain or friction on the affected area.</p>
+          </div>
+        </sl-carousel-item>
+
+        <sl-carousel-item>
+          <div class="slide">
+            <h6>Pain Killers</h6>
+            <img src="photos-first-aid/pain-killer.png" alt="First aid: tablets">
+            <p>Painkillers are included in a first aid kit to help relieve minor pain,
+               headaches, muscle aches, or injuries until further treatment is available.
+                Common options like paracetamol or ibuprofen can reduce discomfort,
+                 inflammation, and fever. Having painkillers on hand allows for quick 
+                 relief in emergency or everyday situations, helping the injured person 
+                 stay calm and comfortable.</p>
+          </div>
+        </sl-carousel-item>
+
+        <sl-carousel-item>
+          <div class="slide">
+            <h6>Cold Packs</h6>
+            <img src="photos-first-aid/cold-pack.png" alt="First aid: Cold Packs">
+            <p>Cold packs are an essential first aid item used to reduce swelling, pain,
+              and inflammation from injuries such as sprains, bruises, or insect bites.
+               When activated, they provide instant cooling that helps constrict blood 
+               vessels and minimize tissue damage. Cold packs are especially useful for
+                treating soft tissue injuries and providing comfort until further medical care is available.</p>
+          </div>
+        </sl-carousel-item>
+
+
+        <sl-carousel-item>
+          <div class="slide">
+            <h6>Cotton Buds</h6>
+            <img src="photos-first-aid/cotton-bud.png" alt="First aid: Cotton Buds">
+            <p>Cotton buds are a useful addition to a first aid kit because they allow for 
+              precise cleaning and application of ointments or antiseptics to small wounds 
+              or delicate areas. Their small tips make it easier to treat cuts, scrapes, or 
+              insect bites without contaminating the rest of the dressing. They help maintain
+               hygiene and accuracy when applying first aid care.</p>
+          </div>
+        </sl-carousel-item>
+
+  <sl-carousel-item>
+        <div class="slide">
+          <h6>Tweezers</h6>
+          <img src="photos-first-aid/tweezers1.png" alt="First aid: Tweezers">
+          <p>Tweezers are an important tool in a first aid kit because they help remove
+             small foreign objects such as splinters, glass, or debris from the skin safely. 
+             Using tweezers prevents further injury or infection by allowing precise 
+             removal without direct contact. They’re also useful for handling sterile
+              dressings or removing ticks during outdoor first aid situations.</p>
+        </div>
+      </sl-carousel-item>
+
+      <sl-carousel-item>
+        <div class="slide">
+          <h6>Alcoholic Wipes</h6>
+          <img src="photos-first-aid/wipes.png" alt="First aid: Wipes">
+          <p>Alcoholic wipes are included in a first aid kit to clean and disinfect 
+            the skin or small wounds before applying a dressing or bandage. They help 
+            kill bacteria and reduce the risk of infection. Alcohol wipes can also be 
+            used to sanitize hands or medical tools, ensuring that first aid is given 
+            in a clean and safe manner.</p>
+        </div>
+      </sl-carousel-item>
+
+    </sl-carousel>
+  
+  </div>
+  <!--Contact / Footer Section -->
+<section id="contact"> 
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="photos-first-aid/first-aid-box.png" alt="First Aid Hub logo" class="footer-logo" >
+      <h3>First Aid Hub</h3>
+    </div>
+
+    <!-- Quick resource links (footer nav) -->
+    <nav class="footer-section">
+      <h6>Resource</h6>
+      <ul class="footer-list">
+        <li><a href="#general-info">General Information</a></li>
+        <li><a href="#topics">Topics</a></li>
+        <li><a href="#dos-donts">Do’s &amp; Don’ts</a></li>
+        <li><a href="#DRSABCD">DRS ABCD</a></li>
+        <li><a href="#first-aid-kit">Inside a First Aid Kit</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Contact details + social links -->
+      <div class="footer-section">
+        <h6>Connect</h6>
+        <a href="mailto:firstaidhub@gmail.com" class="footer-email">firstaidhub@gmail.com</a>
+        <div class="footer-social">
+          <a  href="#https://www.facebook.com/AustraliaWideFirstAid/" class="social-btn">
+            <img src="photos-first-aid/facebook.png" alt="Facebook logo">
+          </a>
+          <a  href="#https://www.instagram.com/australiawidefirstaid/?hl=en" class="social-btn">
+            <img src="photos-first-aid/insta.png.webp" alt="Instagram logo" >
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> First Aid Hub · For education only</p>
+    </div>
+</footer>
+</section>
+
+
+
+  <script src="main.js"></script>
+</body>
+</html>
+
+<!-- References
+“Band-Aid.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/band-aid_3824610.
+
+
+“Bandage Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/bandage_4302180..
+
+“Bee Sting Icon (Apitherapy).” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/apitherapy_3696216.
+
+
+“Blood Droplet Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/blood-droplet_5444489.
+
+“Breathing Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/breathing/.
+
+“Burn Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/burn_10281650.
+
+“Carousel.” Shoelace. Accessed October 23, 2025. https://shoelace.style/components/carousel.
+
+
+“Choking Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/choking_2231110.
+
+
+“Cold Pack.” Flaticon. Accessed October 23, 2025. https://www.flaticon.com/free-icon/cold-pack_14234986.
+
+
+“Cotton Bud.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/cotton-bud_5576870.
+
+
+“CPR Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/cpr_8123423.
+
+
+“Cream Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/cream_2038016.
+
+
+“Cut/First Aid Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/first-aid_6163150.
+
+“Deep Sigh Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/deep%20sigh/.
+
+“Defibrillator Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/defibrillator%20sound/.
+
+“First Aid Box.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/first-aid-box_17433112.
+
+“First Aid Kit Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/first-aid-kit_2760491.
+
+
+“Fracture Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/medical_14006489.
+
+
+“Fruit and Veg Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/fruits_1410629.
+
+
+“Glove.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/glove_3365427.
+
+
+“Green Check Animation.” LottieFiles. Accessed October 23, 2025. https://app.lottiefiles.com/animation/0da80284-0cb5-4a4b-a91f-a4abe968ae42.
+
+“Heartbeat Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/heatbeat/.
+
+“HTML Audio/Video.” W3Schools. Accessed October 22, 2025. https://www.w3schools.com/html/html5_audio.asp.
+
+
+“HTML Audio/Video DOM Reference.” W3Schools. Accessed October 22, 2025. https://www.w3schools.com/jsref/dom_obj_audio.asp.
+
+
+“Injury Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/injury_843190.
+
+
+“Instagram icon.png.” Wikipedia (Chichewa). Accessed October 23, 2025. https://ny.wikipedia.org/wiki/File:Instagram_icon.png.
+
+
+“JavaScript for Loop.” W3Schools. Accessed October 22, 2025. https://www.w3schools.com/js/js_loop_for.asp.
+
+
+“Logo de Facebook.png.” Wikimedia Commons. Accessed October 22, 2025. https://commons.wikimedia.org/wiki/File:Logo_de_Facebook.png.
+
+
+“Menu.” Shoelace. Accessed October 23, 2025. https://shoelace.style/components/menu.
+
+
+“Mental Health Icon.” Flaticon. Accessed October 22, 2025. https://www.flaticon.com/free-icon/mental-health_2770932.
+
+
+“Pain Killer.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/pain-killer_9738889.
+
+“Police Siren Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/police%20siren/.
+
+“Red Cross Animation.” LottieFiles. Accessed October 23, 2025. https://app.lottiefiles.com/animation/39c52286-a928-413c-8b72-3312222cdf24.
+
+
+“ScrollTrigger (GSAP Plugin Documentation).” GSAP Docs. Accessed October 22, 2025. https://gsap.com/docs/v3/Plugins/ScrollTrigger/.
+
+“School Fire Alarm Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/school%20fire%20alarm/.
+
+“Snapping Sound Effect.” Pixabay. Accessed October 22, 2025.https://pixabay.com/sound-effects/search/snappin%20/.
+
+“Shock Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/shock_9569053.
+
+“Sleeping Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/sleeping_2829066.
+
+SVGator. “How to Add Animated SVG to Your Website.” Help Center. Accessed October 27, 2025. https://www.svgator.com/help/integrating-your-animations/how-to-add-animated-svg-to-your-website.
+
+SVGator 2025, Success Check SVG Animation, SVGator, viewed 27 October 2025, https://app.svgator.com/editor#/a6e26cc496c94e0a8b62c4c279a3b363.
+
+SVGator 2025, Tick SVG Animation, SVGator, viewed 27 October 2025, https://app.svgator.com/editor#/29bbcf5535c74780aa4b3907c6a72c20.
+
+“Tab Panel.” Shoelace. Accessed October 23, 2025. https://shoelace.style/components/tab-panel.
+
+
+“Tweezers.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/tweezers_7135621.
+
+
+“Tweezers.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/tweezers_5786825.
+
+
+“Washing Hands Icon.” Flaticon. Accessed October 21, 2025. https://www.flaticon.com/free-icon/washing-hands_3159988.
+
+
+“Water Drop Icon.” Flaticon. Accessed October 22, 2025. https://www.flaticon.com/free-icon/water-drop_3105807.
+
+
+“Wipes.” Flaticon. Accessed October 24, 2025. https://www.flaticon.com/free-icon/wipes_8058222.
+        
+  -->
